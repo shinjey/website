@@ -4,18 +4,19 @@ body {
   background-size: 100% 100%;
   height: 100vh;
   justify-content: center;
-  margin: 0px;
   overflow: hidden;
-  padding: 0px;
   place-items: center;
+  display: grid;
 }
 
 button {
-  left: 80px;
-  top: 100px;
+  left: 20px;
+  top: 40px;
   position: absolute;
   font-family: "monospace", Courier;
   background-color: rgb(202, 111, 97);
+  margin: 0;
+  position: absolute;
 }
 
 a:link {
@@ -48,12 +49,12 @@ a:active {
   background-color: transparent;
   width: 100px;
   height: 140px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4);
+  perspective: 1000px; /*Remove this if you don't want the 3D effect */
 }
 
 /* This container is needed to position the front and back side */
 .flip-card-inner {
-  grid-area: inner-div;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -64,12 +65,12 @@ a:active {
 /* Do an horizontal flip when you move the mouse over the flip box container */
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+  box-shadow: none;
 }
 
 /* Position the front and back side */
 .flip-card-front,
 .flip-card-back {
-  grid-area: inner-div;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -95,14 +96,15 @@ a:active {
   transform: rotateY(180deg);
   border-radius: 1.1vmin;
 }
-/*.card1,
+.card1,
 .card2,
 .card3,
 .card4,
 .card5,
 .card6 {
-}*/
-
+  grid-area: inner-div;
+}
+/*---------------animations---------*/
 .card1 {
   animation-name: cardthrow1;
   animation-delay: 2s;
@@ -110,40 +112,120 @@ a:active {
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   position: relative;
-  left: 100%;
-  top: 100%;
 }
 
 @keyframes cardthrow1 {
   from {
-    left: 100%;
-    top: 100%;
+    left: 0%;
+    top: 0%;
   }
   to {
-    left: -90%;
-    top: 0%;
+    left: -160%;
+    top: -75%;
     rotate: -13deg;
   }
 }
 .card2 {
   animation-name: cardthrow2;
-  animation-delay: 2.5s;
+  animation-delay: 2.8s;
   animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   position: relative;
-  left: 100%;
-  top: 100%;
 }
 
 @keyframes cardthrow2 {
   from {
-    left: 100%;
-    top: 100%;
+    left: 0%;
+    top: 0%;
   }
   to {
     left: 0%;
+    top: -85%;
+    rotate: -2deg;
+  }
+}
+
+.card3 {
+  animation-name: cardthrow3;
+  animation-delay: 3.6s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes cardthrow3 {
+  from {
+    left: 0%;
     top: 0%;
-    rotate: -3deg;
+  }
+  to {
+    left: 190%;
+    top: -77%;
+    rotate: 16deg;
+  }
+}
+
+.card4 {
+  animation-name: cardthrow4;
+  animation-delay: 4.4s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes cardthrow4 {
+  from {
+    left: 0%;
+    top: 0%;
+  }
+  to {
+    left: -153%;
+    top: -37%;
+    rotate: -16deg;
+  }
+}
+
+.card5 {
+  animation-name: cardthrow5;
+  animation-delay: 5.2s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes cardthrow5 {
+  from {
+    left: 0%;
+    top: 0%;
+  }
+  to {
+    left: 3%;
+    top: -45%;
+    rotate: 7deg;
+  }
+}
+
+.card6 {
+  animation-name: cardthrow6;
+  animation-delay: 6s;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes cardthrow6 {
+  from {
+    left: 0%;
+    top: 0%;
+  }
+  to {
+    left: 142%;
+    top: -31%;
+    rotate: 14deg;
   }
 }

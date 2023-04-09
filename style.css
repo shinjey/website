@@ -22,13 +22,10 @@ h1 {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-h1.hover {
-  color: black;
-  background-color: rgba(255, 255, 255, 0.5);
-}
 img {
   size: 60%;
 }
+
 h2 {
   font-family: "monospace", Courier;
   font-size: clamp(1rem, 3vw, 3rem);
@@ -42,6 +39,40 @@ h2 {
   top: 90%;
   translate: -50% -50%;
   z-index: 3;
+}
+h2::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h2:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+h2::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
 }
 
 a:link {
@@ -57,8 +88,7 @@ a:visited {
 }
 
 a:hover {
-  color: rgb(62, 18, 63);
-  background-color: transparent;
+  color: rgb(227, 201, 222);
   transition: 0.2s;
   opacity: 1;
 }
@@ -123,6 +153,7 @@ a:active {
 
 .big-card {
   border-radius: 2.5vmin;
+  box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.4);
 }
 
 .little-card {
