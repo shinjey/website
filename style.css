@@ -9,7 +9,7 @@ body {
 h1 {
   font-family: "monospace", Courier;
   font-size: clamp(3rem, 10vw, 10rem);
-  color: rgba(0, 0, 0);
+  background: -webkit-linear-gradient(#9b70a071, #e18c8c6a);
   white-space: nowrap;
   padding: 0rem clamp(1rem, 2vw, 3rem);
   border-radius: clamp(0.4rem, 0.75vw, 1rem);
@@ -19,7 +19,8 @@ h1 {
   top: 50%;
   translate: -50% -50%;
   z-index: 3;
-  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  border: 5px solid black;
 }
 
 img {
@@ -176,14 +177,17 @@ a:active {
 
 .big-card:nth-child(2) {
   transform: translate(-12%) rotate(2deg);
+  filter: blur(1.8px);
 }
 
 .big-card:nth-child(4) {
   transform: translateX(-6%) rotate(-3deg);
+  filter: blur(1.3px);
 }
 
 .big-card:nth-child(6) {
   transform: translate(10%, 3%) rotate(5deg);
+  filter: blur(0.5px);
 }
 
 .big-card:nth-child(8) {
