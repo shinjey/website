@@ -12,3 +12,7 @@ document.getElementById("cards").onmousemove = (e) => {
 function relood() {
   window.location.reload();
 }
+
+card.onmouseover = function pushIndex() {
+  document.getElementById("card").style.zIndex = "1";
+};
